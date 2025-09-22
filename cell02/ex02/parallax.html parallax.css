@@ -1,1 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Parallax Page</title>
+  <link rel="stylesheet" href="parallax.css">
+</head>
+<body>
+
+  <section class="parallax parallax-1">
+    <div class="centered-text">Welcome to the Parallax Experience</div>
+  </section>
+
+  <section class="content">
+    <h2>This is a black content block</h2>
+    <p>You can put any message or content you want here. Scroll down to see more.</p>
+  </section>
+
+  <section class="parallax parallax-2">
+    <div class="centered-text">Thanks for Scrolling!</div>
+  </section>
+
+</body>
+</html>
+
+/* Reset basic styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+/* Common parallax style */
+.parallax {
+  min-height: 100vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.8);
+  font-size: 2em;
+  text-align: center;
+}
+
+/* First parallax image */
+.parallax-1 {
+  background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb');
+}
+
+/* Second parallax image */
+.parallax-2 {
+  background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e');
+}
+
+/* Middle content block */
+.content {
+  background-color: black;
+  color: white;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.centered-text {
+  padding: 20px;
+}
 
