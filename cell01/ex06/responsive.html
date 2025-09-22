@@ -1,1 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Responsive Table</title>
+  <style>
+    /* Make html and body fill entire viewport */
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
 
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh; /* full viewport height */
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+
+    table {
+      width: 90vw; /* 90% of viewport width */
+      height: 90vh; /* 90% of viewport height */
+      border-collapse: collapse;
+      table-layout: fixed; /* make cells equal width */
+    }
+
+    td {
+      border: 1px solid #333;
+      color: white;
+      font-weight: bold;
+      font-size: 2vw; /* font scales with viewport width */
+      text-align: center;
+      vertical-align: middle;
+      padding: 0; /* remove default padding */
+    }
+
+    .box1 {
+      background-color: #3498db;
+    }
+
+    .box2 {
+      background-color: #e67e22;
+    }
+
+    /* On very small screens, stack cells vertically */
+    @media (max-width: 500px) {
+      table {
+        height: auto;
+        width: 100vw;
+      }
+      tr {
+        display: flex;
+        flex-direction: column;
+      }
+      td {
+        height: 50vh; /* half viewport height */
+        font-size: 5vw;
+      }
+    }
+  </style>
+</head>
+<body>
+  <table>
+    <tr>
+      <td class="box1">Hello!</td>
+      <td class="box2">World!</td>
+    </tr>
+  </table>
+</body>
+</html>
