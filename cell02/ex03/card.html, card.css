@@ -1,1 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Profile Card</title>
+  <link rel="stylesheet" href="card.css">
+</head>
+<body>
+
+  <div class="card">
+    <h2 class="card-title">My Profile</h2>
+    
+    <div class="card-table">
+      <div class="profile-pic">
+        <img src="https://i.pravatar.cc/150?img=32" alt="Profile Picture">
+      </div>
+
+      <div class="profile-login">@mylogin</div>
+      <div class="profile-description">Web Developer</div>
+
+      <div class="social-icons">
+        <img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook">
+        <img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Twitter">
+        <img src="https://cdn-icons-png.flaticon.com/24/733/733561.png" alt="Instagram">
+      </div>
+
+      <button class="contact-btn">Contact</button>
+    </div>
+  </div>
+
+</body>
+</html>
+
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background-color: #ffffff;
+  width: 300px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+  padding: 20px;
+}
+
+.card-title {
+  margin-bottom: 15px;
+  font-size: 24px;
+  color: #333;
+}
+
+/* Invisible table layout using flexbox */
+.card-table {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-pic img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.profile-login {
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.profile-description {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 15px;
+}
+
+.social-icons img {
+  margin: 0 5px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.social-icons img:hover {
+  transform: scale(1.2);
+}
+
+.contact-btn {
+  margin-top: 20px;
+  background-color: #2d89ef;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.contact-btn:hover {
+  background-color: #1b5fbd;
+}
 
