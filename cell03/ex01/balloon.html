@@ -1,1 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Explode the Balloon</title>
+  <style>
+    body {
+      background-color: #f0f0f0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #balloon {
+      width: 200px;
+      height: 200px;
+      background-color: red;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="balloon"></div>
+
+  <script>
+    const balloon = document.getElementById("balloon");
+
+    const colors = ["red", "green", "blue"];
+    let colorIndex = 0;
+    let size = 200;
+
+    // Click to grow and change color (forward)
+    balloon.addEventListener("click", () => {
+      size += 10;
+
+      // Cycle to next color
+      colorIndex = (colorIndex + 1) % colors.length;
+      balloon.style.backgroundColor = colors[colorIndex];
+
+      if (size > 420) {
+        // Balloon explodes - reset everything
+        size = 200;
+        colorIndex = 0;
+        balloon.style.backgroundColor = colors[colorIndex];
+      }
+
+      // Apply size
+      balloon.style.width = size + "px";
+      balloon.style.height = size + "px";
+    });
+
+    // Mouse leave to shrink and change color (reverse)
+    balloon.addEventListener("mouseleave", () => {
+      if (size > 200) {
+        size -= 5;
+      }
+
+      // Cycle to previous color
+      colorIndex = (colorIndex - 1 + colors.length) % colors.length;
+      balloon.style.backgroundColor = colors[colorIndex];
+
+      // Apply size
+      balloon.style.width = size + "px";
+      balloon.style.height = size + "px";
+    });
+  </script>
+
+</body>
+</html>
 
