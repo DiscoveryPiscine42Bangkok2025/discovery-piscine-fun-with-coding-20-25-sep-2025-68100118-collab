@@ -1,1 +1,48 @@
+ex04/
+├── ex00bis/
+│   ├── backgroound.html
+│   ├── backgroound.css
+│   └── backgroound.js   ← NEW (JS file allowed)
+├── ex01bis/
+│   └── balloon.html
+├── ex02bis/
+│   └── calc.html
+├── ex03bis/
+│   ├── index.html
+│   └── todo.js
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Change Background - jQuery</title>
+  <link rel="stylesheet" href="backgroound.css">
+</head>
+<body>
+
+  <div class="container">
+    <button id="changeBtn">Change Background</button>
+  </div>
+
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Your JS file -->
+  <script src="backgroound.js"></script>
+</body>
+</html>
+
+function getRandomColor() {
+  const r = Math.floor(Math.random() * 256);
+  const g = Math.floor(Math.random() * 256);
+  const b = Math.floor(Math.random() * 256);
+  return `rgb(${r}, ${g}, ${b})`;
+}
+
+$(document).ready(function () {
+  $('#changeBtn').click(function () {
+    $('body').css('background-color', getRandomColor());
+  });
+});
 
