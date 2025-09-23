@@ -1,1 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Change Background</title>
+  <link rel="stylesheet" href="backgroound.css">
+</head>
+<body>
 
+  <div class="container">
+    <button id="changeBtn">Change Background</button>
+  </div>
+
+  <script>
+    // Function to generate a random color
+    function getRandomColor() {
+      const r = Math.floor(Math.random() * 256);
+      const g = Math.floor(Math.random() * 256);
+      const b = Math.floor(Math.random() * 256);
+      return `rgb(${r}, ${g}, ${b})`;
+    }
+
+    // Get the button and add click event
+    const button = document.getElementById('changeBtn');
+    button.addEventListener('click', () => {
+      document.body.style.backgroundColor = getRandomColor();
+    });
+  </script>
+
+</body>
+</html>
+
+/* Center the button on the screen */
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  transition: background-color 0.5s ease;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  padding: 15px 30px;
+  font-size: 16px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
