@@ -1,1 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>It’s over 9000</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
+    .calculator {
+      background: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      display: flex;
+      gap: 10px;
+    }
+
+    input[type="text"], select {
+      padding: 8px;
+      font-size: 16px;
+      width: 100px;
+    }
+
+    input[type="submit"] {
+      padding: 8px 16px;
+      font-size: 16px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+
+  <form class="calculator" onsubmit="return calculate();">
+    <input type="text" id="left" placeholder="Left" />
+    
+    <select id="operator">
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="*">*</option>
+      <option value="/">/</option>
+      <option value="%">%</option>
+    </select>
+    
+    <input type="text" id="right" placeholder="Right" />
+    
+    <input type="submit" value="Try me!" />
+  </form>
+
+  <script>
+    function isPositiveInteger(value) {
+      const num = Number(value);
+      return Number.isInteger(num) && num >= 0;
+    }
+
+    function calculate() {
+      const left = document.getElementById("left").value.trim();
+      const right = document.getElementById("right").value.trim();
+      const operator = document.getElementById("operator").value;
+
+      // Validate input
+      if (!isPositiveInteger(left) || !isPositiveInteger(right)) {
+        alert("Error :(");
+        return false;
+      }
+
+      const a = parseInt(left, 10);
+      const b = parseInt(right, 10);
+      let result;
+
+      // Division or modulo by zero check
+      if ((operator === "/" || operator === "%") && b === 0) {
+        alert("It's over 9000!");
+        console.log("It's over 9000!");
+        return false;
+      }
+
+      switch(operator) {
+        case '+': result = a + b; break;
+        case '-': result = a - b; break;
+        case '*': result = a * b; break;
+        case '/': result = a / b; break;
+        case '%': result = a % b; break;
+      }
+
+      alert("Result: " + result);
+      console.log("Result: " + result);
+
+      return false; // prevent form from reloading the page
+    }
+
+    // Alert every 30 seconds
+    setInterval(() => {
+      alert("Please, use me...");
+    }, 30000);
+  </script>
+
+</body>
+</html>
